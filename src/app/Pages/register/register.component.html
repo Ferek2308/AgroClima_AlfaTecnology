@@ -1,0 +1,119 @@
+<body>
+  <!-- Sección de alerta que se muestra condicionalmente -->
+  <div *ngIf="Alert"
+      class="alert alert-{{registroExitoso ? 'success' : 'danger'}} d-flex align-items-center justify-content-center alert-dismissible"
+      id="alert" role="alert">
+      <i class="bi bi-{{registroExitoso ? 'check' : 'exclamation-circle'}} fs-3 mx-2"></i>
+      <div>
+          {{errorMessage}}
+      </div>
+  </div>
+
+  <!-- Contenedor principal del formulario -->
+ <div class="d-flex align-items-center justify-content-center" style="min-height: 100vh; width: 60%; margin: 0 auto;">
+      <div class="container w-75 bg-white rounded shadow">
+          <div class="row">
+            
+              <div class="col-12 rounded">
+                  <!-- Encabezado del formulario -->
+                  <div class="d-flex align-items-center justify-content-center mb-1 pb-1 mt-3 border border-white">
+                      <img class="logotext" src="../../../assets/logo.png" alt=".">
+                      <i class="fas fa-cubes fa-2x me-3" style="color: #ffffff;"></i>
+                      <p id="logo" class=" fw-bold mb-0">AgroClima</p>
+                  </div>
+
+                  <!-- Formulario -->
+                  <form [formGroup]="forma" (ngSubmit)="crear()" (keyup.enter)="guardar()">
+                      <!-- Campo para el nombre -->
+                      <div class="row">
+                          <div class="mt-1">
+                              <label for="input1" class="form-label">Nombre(s):</label>
+                              <div class="input-field">
+                                  <input type="text" class="form-control" id="input1" formControlName="Nombre"
+                                      placeholder="" required>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- Campo para el primer apellido -->
+                      <div class="row">
+                          <div class="col col-md-12 mb-1 mt-1">
+                              <label for="input2">Primer Apellido:</label>
+                              <div class="input-field">
+                                  <input type="text" class="form-control" id="input2"
+                                      formControlName="Apellido_Paterno" placeholder="">
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- Campo para el segundo apellido -->
+                      <div class="row">
+                          <div class="col col-md-12 mb-1 mt-1">
+                              <label for="input3">Segundo Apellido:</label>
+                              <div class="input-field">
+                                  <input type="text" class="form-control" id="input3"
+                                      formControlName="Apellido_Materno" placeholder="">
+                              </div>
+                          </div>
+                      </div>
+
+           
+                      <div class="row">
+                        <div class="col col-md-12 mb-1 mt-1">
+                            <label for="input3">Localidad:</label>
+                            <select formControlName="Localidad" class="form-select" id="estacion">
+                                <option value="Calakmul">Calakmul</option>
+                                <option value="Calkiní">Calkiní</option>
+                                <option value="Campeche">Campeche</option>
+                                <option value="Carmen">Carmen</option>
+                                <option value="Candelaria">Candelaria</option>
+                                <option value="Champotón">Champotón</option>
+                                <option value="Dzitbalche">Dzitbalche</option>
+                                <option value="Hecelchakán">Hecelchakán</option>
+                                <option value="Hopelchén">Hopelchén</option>
+                                <option value="Palizada">Palizada</option>
+                                <option value="Seybaplaya">Seybaplaya</option>
+                                <option value="Tenabo">Tenabo</option>
+                                <option value="Escárcega">Escárcega</option>
+                            </select>
+                        </div>
+                    </div>
+                      <!-- Campo para el correo electrónico -->
+                      <div class="row">
+                          <div class="mt-1">
+                              <label for="input5">Correo Electrónico:</label>
+                              <div class="input-field">
+                                  <input type="text" class="form-control" id="input5" formControlName="Email"
+                                      placeholder="@gmail.com">
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- Campo para la contraseña con opción de mostrar/ocultar -->
+                      <div class="row">
+                          <div class="mt-1">
+                              <label for="input6">Contraseña:</label>
+                              <div class="input-field">
+                                  <input [type]="mostrarPassword ? 'text' : 'password'" id="input6"
+                                      formControlName="Contraseña" class="form-control rounded"
+                                      placeholder="*******" />
+                                  <button type="button" class=" btn-light btn-rounded" (click)="mostrarContra()">
+                                      <i class="bi bi-eye{{ mostrarPassword ? '-slash' : '' }} "></i>
+                                  </button>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- Botón para enviar el formulario -->
+                      <div class="row">
+                          <div class="d-grid gap-2 col-6 mx-auto mt-3 mb-2">
+                              <button class="btn btn-custom  btn-dark btn-lg btn-block" type="button"
+                                  (click)="guardar()">Registrarte</button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</body>

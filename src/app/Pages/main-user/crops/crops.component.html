@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultivos</title>
+    <!-- Add Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Add your custom CSS here -->
+  
+</head>
+<body>
+ 
+    <div class="container">
+        <h1 class="text-center my-4 titulo">Cultivos</h1>
+        <div class="input-group mb-5">
+          <div class="input-group-prepend">
+              <span class="input-group-text"><i class="bi bi-search"></i></span>
+          </div>
+          <input type="text" [(ngModel)]="filtro" class="form-control" placeholder="Buscar cultivo...">
+      </div>
+        <div class="floating-container">
+          <app-cultivoterreno *ngIf="showadd"></app-cultivoterreno>
+          <div class="floating-container" *ngIf="showadd">
+            <app-cultivoterreno (cerrar)="cerrarAgregar()"></app-cultivoterreno>
+          </div>
+          
+      </div>
+
+        <div class="row">
+          <div class="col-md-4" *ngFor="let cultivo of filtrarCultivos()">
+        
+            <div class="card mb-3 card-body d-flex flex-column align-items-center">
+                <div class="cardimg">
+                    <img [src]="cultivo.Imagen ?? 'ruta_por_defecto.jpg'" class="card-img-top" alt="{{ cultivo.Nombre }}">
+                </div>
+              <div class="card-body">
+                <h5 class="card-title text-center p">{{ cultivo.Nombre }}</h5>
+                <h6 class="card-title text-center ">Precio en el mercado: ${{ cultivo.Precio_En_El_Mercado }}</h6>
+              </div>
+             
+              <div class="card-body ">
+               
+                <a routerLink="/navbar/informacion/{{ cultivo.ID_Cultivo }}" class="btn btn-primary btn-margin custom-btn-ver" role="button" aria-pressed="true">
+                  <i class="bi bi-info-circle">Información</i>
+               
+                </a> 
+           
+     
+                <a (click)="mostraradd(cultivo.ID_Cultivo)" class="btn btn-danger custom-btn-add" role="button" aria-pressed="true">
+                    <i class="bi bi-plus-circle">Agregar</i>
+                </a>
+            
+              </div>
+            </div>
+            </div>
+            <div class="text-center" *ngIf="filtrarCultivos().length === 0">
+              <div style="font-size: 4rem;">
+                  <i class="bi bi-emoji-frown" style="font-size: 8rem;"></i> <!-- Icono triste -->
+                  <p><strong>No se encontraron resultados.</strong></p>
+              </div>
+          </div>
+          </div>
+        </div>  
+</body>
+</html>

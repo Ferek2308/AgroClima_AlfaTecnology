@@ -1,0 +1,57 @@
+.container {
+    padding: 20px;
+  }
+  /* Estilo para el contenedor de la imagen */
+.card {
+  text-align: center; /* Centra la imagen */
+}
+
+.titulo {
+  font-family: 'Roboto', sans-serif; /* Fuente legible y moderna */
+  font-size: 35px; /* Tamaño grande para destacar */
+  font-weight: bold; /* Negrita para énfasis */
+  color: #0d460f; /* Verde asociado con la naturaleza y la agricultura */
+  text-transform: uppercase; /* Mayúsculas para un aspecto más formal */
+  text-align: center; /* Centrado para un diseño equilibrado */
+  margin-bottom: 20px; /* Margen inferior para separación de elementos */
+}
+body {
+  background-color: #ffffff; /* Código de color en formato hexadecimal */
+  margin: 20px;
+}
+.custom-btn-save {
+  background-color:  #024502;
+  color: white; 
+  border: 2px solid #030303; 
+  font-weight: bold; 
+}
+
+  .green-field {
+    height: 300px; /* adjust the height according to your needs */
+    background-color: #C6E2B5; /* a light green color */
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  label {
+    margin-bottom: 10px;
+  }
+  
+  .form-control {
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    margin-right: 10px;
+  }
+  
+
+  
+  #vista-previa-btn {
+    background-color: #999999; /* a gray color */
+    color: #FFFFFF;
+  }
+  .card {
+    margin-top: 30px; /* Espacio desde la parte superior */
+}

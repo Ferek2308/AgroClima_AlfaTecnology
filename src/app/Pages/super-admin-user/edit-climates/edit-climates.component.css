@@ -1,0 +1,72 @@
+table {
+    width: 100%; /* Cambia el valor según sea necesario */
+    margin: 0 auto; /* Esto centrará la tabla horizontalmente */
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #f2f2f2; /* Cambia el color de fondo según tus preferencias */
+    border: 2px solid #ccc;
+ 
+}
+.titulo {
+    font-family: 'Newsreader', serif;/* Fuente legible y moderna */
+    font-size: 30px; /* Tamaño grande para destacar */
+    font-weight: bold; /* Negrita para énfasis */
+    color: #0d460f; /* Verde asociado con la naturaleza y la agricultura */
+    text-transform: uppercase; /* Mayúsculas para un aspecto más formal */
+    text-align: center; /* Centrado para un diseño equilibrado */
+    margin-bottom: 20px; /* Margen inferior para separación de elementos */
+  }
+  body {
+    background-color: #ffffff; /* Código de color en formato hexadecimal */
+    margin: 20px;
+  }
+  .p {
+    font-family: 'Newsreader', serif;
+    font-weight: bold;
+    font-size: 1.4em; 
+    color: #000000; /* Cambia el color del texto */
+    }
+    .ps {
+      font-family: 'Lora', serif; 
+      font-weight: bold;
+      font-size: 1.2em; 
+      color: #ffffff; /* Cambia el color del texto */
+    }
+  .custom-btn-save {
+    background-color:  #006400;
+    color: white; 
+    border: 2px solid #030303; 
+    font-weight: bold; 
+}
+.custom-card {
+    background-color: #d7dad6; 
+    width: 90%;
+    margin: 0 auto; /* Centra horizontalmente el contenido */
+    text-align: center; 
+}
+
+
+th, td {
+    border: 1px solid #002104;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #4c691a;
+}
+th:first-child {
+    width: 20%;
+}
+td:first-child {
+    font-weight: bold;
+}
+
+/* Estilos para el formulario de localidad */
+#estado {
+    width: 70%; /* Ajusta el ancho del formulario de localidad */
+}
+
+/* Estilos para centrar el botón */
+.btn-container {
+    text-align: center;
+}

@@ -1,0 +1,59 @@
+<body>
+    
+<div class="container">
+    <div class="row">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
+        <div class="col-md-12 mt-5">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h3 class="text-theme-center titulo">Datos Climáticos</h3>
+                    <p class="p">Lista de datos climáticos</p>
+                    <div class="d-flex justify-content-center mb-3"> <!-- Utilizamos d-flex y justify-content-center para centrar el botón -->
+                        <!-- Botón para agregar datos climáticos -->
+                        <a class="btn custom-btn-save text-center" routerLink="/super-admin-nav/agregar-clima">Agregar Datos Climáticos <i class="bi bi-plus-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 mt-5">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="ps"> No. </th>
+                                <th class="ps"> Municipio </th>
+                                <th class="ps"> Acciones </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor="let clima of datosClimaticos">
+                                <td class="col-2 data"> {{ clima.ID }} </td>
+                                <td class="col-2 data">{{ clima.Estado }}</td>
+
+                                <!-- Agrega los datos para los demás meses -->
+                                <td class="col-2">
+                                    <a routerLink="/super-admin-nav/edit-clima/{{ clima.ID }}" class="btn  btn-margin custom-btn-edit" role="button" aria-pressed="true">
+                                        <i class="bi bi-pen">Editar</i>
+                                     
+                                      </a>
+                                      
+                                    <button class="btn custom-btn-deleted btn-sm m-1 bi bi-trash"
+                                    (click)="eliminar(clima?.ID)">Eliminar
+                                      
+                                    </button>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+

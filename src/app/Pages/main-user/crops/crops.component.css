@@ -1,0 +1,95 @@
+.card {
+    border: 1px solid #ccc;
+    padding: 14px;
+    margin: 5px;
+    width: calc(96% - 20px);
+    height: 350px; /* Altura definida */
+    overflow: hidden;
+  }
+  .titulo {
+    font-family: 'Roboto', sans-serif; /* Fuente legible y moderna */
+    font-size: 35px; /* Tamaño grande para destacar */
+    font-weight: bold; /* Negrita para énfasis */
+    color: #0d460f; /* Verde asociado con la naturaleza y la agricultura */
+    text-transform: uppercase; /* Mayúsculas para un aspecto más formal */
+    text-align: center; /* Centrado para un diseño equilibrado */
+    margin-bottom: 20px; /* Margen inferior para separación de elementos */
+}
+  body {
+    background-color: #ffffff; /* Código de color en formato hexadecimal */
+    margin: 20px;
+}
+.p {
+  font-family: 'Newsreader', serif;
+  font-weight: bold;
+  font-size: 1.6em; 
+  color: #094a09; /* Cambia el color del texto */
+}
+  .cultivo-container {
+    position: relative;
+}
+.custom-btn-add {
+  background-color:  #FFFF00;
+  color: black; 
+  border: 2px solid #030303; 
+  font-weight: bold; 
+}
+.custom-btn-ver {
+  background-color:  #004300;
+  color: rgb(251, 251, 251); 
+  border: 2px solid #030303; 
+  font-weight: bold; 
+}
+
+
+.cultivo-container .app-cultivoterreno {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ajusta el valor según sea necesario para que el componente se muestre delante */
+}
+  .card-img-top {
+    width: 150%; /* La imagen ocupará el ancho completo del contenedor */
+    height: 175px; /* La altura se ajustará automáticamente para mantener la relación de aspecto */
+    max-width: 200px; /* Establece un ancho máximo para evitar que las imágenes sean demasiado grandes */
+    max-height: 200px; /* Establece una altura máxima para evitar que las imágenes sean demasiado altas */
+    object-fit: cover; 
+    display: block; /* Para que el margin automático funcione correctamente */
+    margin: 0 auto; 
+   
+  }
+  
+  .custom-card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.floating-container {
+  position: fixed;
+  top: 20px; /* Ajusta la posición vertical según necesites */
+  right: 20px; /* Ajusta la posición horizontal según necesites */
+  z-index: 9999; /* Asegúrate de que esté por encima de todo */
+}
+  .card-name {
+    font-size: 1em;
+    margin-bottom: 8px;
+  }
+  
+  .card-info {
+    font-size: 0.9em;
+    margin-bottom: 1px;
+  }
+  
+  .card-property {
+    font-size: 0.8em;
+    margin-bottom: 8px;
+  }
+  
+
+  /* Agregar margen entre los botones */
+  .btn-margin {
+    margin-right: 10px;
+  
+  }
+  

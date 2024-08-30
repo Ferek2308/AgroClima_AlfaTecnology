@@ -1,0 +1,87 @@
+<body>
+    
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mt-5">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
+                    <h3 class="text-theme-center titulo">Todos los usuarios</h3>
+                    <p class="p">Lista de todos los usuarios</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="input-group mb-6 mt-4"> 
+        <button class="btn btn-outline-primary" type="button" id="button-addon2" (click)="toggleFiltroMenu()">
+            <i class="bi bi-filter"></i> Filtrar
+        </button>
+        <input type="text" [(ngModel)]="filtro" class="form-control" placeholder="Buscar...">
+        <ul class="dropdown-menu dropdown-menu-end" [ngClass]="{ 'show': filtroMenuVisible }" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" (click)="selectedFiltro = 'Nombre'; cerrarFiltroMenu()"><i class="bi bi-person"></i> Nombre</a></li>
+            <li><a class="dropdown-item" (click)="selectedFiltro = 'Localidad'; cerrarFiltroMenu()"><i class="bi bi-geo-alt"></i> Localidad</a></li>
+            <li><a class="dropdown-item" (click)="selectedFiltro = 'Rol'; cerrarFiltroMenu()"><i class="bi bi-people"></i> Rol</a></li>
+        </ul>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 mt-1">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <table class="table row-border hover">
+                        <thead>
+                            <tr>
+                                <th class="ps"> No. </th>
+                                <th class="ps"> Nombre </th>
+                                <th class="ps"> Primer Apellido </th>
+                                <th class="ps"> Segundo Apellido </th>
+                                <th class="ps"> Localidad </th>
+                                <th class="ps"> Rol </th>
+                                <th class="ps"> Acciones </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                             <tr *ngFor="let user of filtrarUsuarios()">
+                                <td class="col-2 data"> {{ user.ID_Usuario }} </td>
+                                <td class="col-2 data"> {{ user.Nombre }} </td>
+                                <td class="col-2 data"> {{ user.Apellido_Paterno }} </td>
+                                <td class="col-2 data"> {{ user.Apellido_Materno }} </td>
+                                <td class="col-2 data"> {{ user.Localidad }} </td>
+                                <td class="col-2 data">
+                                    <select class="form-select" #roleSelect
+                                            (change)="seleccionCambiada(roleSelect.value)">
+                                        <option value="" selected>{{ formatRole(user.Rol) }}</option>
+                                        <option *ngIf="user.Rol !== 'Agricultor'" [value]="'Agricultor'">Agricultor</option>
+                                        <option *ngIf="user.Rol !== 'Editor'" [value]="'Editor'">Editor</option>
+                                    </select>
+                                </td>
+                              
+                                <td class="col-2">
+                                    <button class="btn custom-btn-save btn-sm m-1 bi bi-save"
+                                            (click)="guardarRol(user.ID_Usuario, roleSelect.value)"
+                                            >
+                                    </button>
+                        
+                                    <button class="btn custom-btn-deleted btn-sm m-1 bi bi-trash"
+                                            (click)="eliminar(user.ID_Usuario)">
+                                      
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                   
+                    </table>
+                    <div class="text-center" *ngIf="filtrarUsuarios().length === 0">
+                        <div style="font-size: 4rem;">
+                            <i class="bi bi-emoji-frown" style="font-size: 7rem;"></i> <!-- Icono triste -->
+                            <p><strong>No se encontraron resultados.</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>

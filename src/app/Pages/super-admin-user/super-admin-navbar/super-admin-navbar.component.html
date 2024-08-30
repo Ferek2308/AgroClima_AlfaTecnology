@@ -1,0 +1,36 @@
+<div class="navv">
+  <nav class="navbar navbar-expand-lg navbar-custom">
+  <div class="container-fluid">
+    <img class="logo" src="assets/logo.png" alt="." width="45">
+    <a id="Agroclima" class="navbar-brand" href="#">AGROCLIMA</a>
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()" aria-controls="navbarNavAltMarkup"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div [ngClass]="{'collapse': !isNavbarCollapsed, 'navbar-collapse': true, 'justify-content-end': true}" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/super-admin-nav/climas">Calcular Clima</a>
+        <a class="nav-item nav-link" routerLink="/super-admin-nav/historia-de-cultivos">Historial de cultivos</a>
+        <a class="nav-item nav-link" routerLink="/super-admin-nav/historial-de-pestes">Historial de plagas</a>
+        <a class="nav-item nav-link" routerLink="/super-admin-nav/usuarios">Usuarios</a>
+        <div class="opciones">
+          <div class="dropdown pb-4">
+            <a href="javascript:void(0)" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+            id="dropdownUser1" (click)="toggleDropdown($event)" aria-expanded="false">          
+            <span class="d-none d-sm-inline mx-1">{{ usuario.Nombre }}</span>
+         </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" [ngClass]="{'show': isDropdownOpen}">
+              <li><a class="dropdown-item" routerLink="" (click)="salir()">Salir</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </nav>
+  <router-outlet></router-outlet>
+</div>
+<footer>
+  <app-footer></app-footer>
+</footer> 

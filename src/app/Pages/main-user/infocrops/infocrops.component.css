@@ -1,0 +1,46 @@
+/* Estilo para la imagen */
+body {
+  background-color: #ffffff; /* Código de color en formato hexadecimal */
+  margin: 20px;
+}
+.img {
+
+  width: 240px; /* Tamaño deseado */
+  border: 2px solid #030303; 
+  height: 240px; /* Tamaño deseado */
+  border-radius: 50%; /* Hace que la imagen sea circular */
+  object-fit: cover; /* Mantiene la relación de aspecto y cubre completamente el contenedor */
+}
+.text-center.fs-2.mb-2 {
+  font-family: 'Newsreader', serif;
+
+  color: #094a09; /* Cambia el color del texto */
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centrar verticalmente */
+  gap: 20px; /* Espacio entre las tarjetas */
+}
+/* Estilo para el contenedor de la imagen */
+.card {
+  text-align: center; /* Centra la imagen */
+}
+
+/* Estilo para los botones */
+.btn {
+  margin-top: 10px; /* Espacio entre los botones y la imagen */
+}
+
+
+h2 {
+  text-align: center; /* Centrar el texto */
+}
+
+.card {
+  margin-top: 30px; /* Espacio desde la parte superior */
+}
+label{
+  text-align: justify; /* Espacio desde la parte superior */
+}

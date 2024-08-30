@@ -1,0 +1,60 @@
+.custom-card {
+    background-color: #95efbcbe; /* Cambia el color de fondo según tu preferencia */
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+  .titulo {
+    font-family: 'Roboto', sans-serif; /* Fuente legible y moderna */
+    font-size: 35px; /* Tamaño grande para destacar */
+    font-weight: bold; /* Negrita para énfasis */
+    color: #0d460f; /* Verde asociado con la naturaleza y la agricultura */
+    text-transform: uppercase; /* Mayúsculas para un aspecto más formal */
+    text-align: center; /* Centrado para un diseño equilibrado */
+    margin-bottom: 20px; /* Margen inferior para separación de elementos */
+  }
+  .custom  {
+    border: 2px solid #030303; 
+    background-color:   #90EE90; 
+  }
+  .ps {
+    font-family: 'Lora', serif; 
+    font-weight: bold;
+    font-size: 2em; 
+    color: #00452b; /* Cambia el color del texto */
+  }
+  body {
+    background-color: #ffffff; /* Código de color en formato hexadecimal */
+    margin: 20px;
+  }
+  .p {
+    font-family: 'Newsreader', serif;
+    font-weight: bold;
+    font-size: 1.6em; 
+    color: #094a09; /* Cambia el color del texto */
+  }
+
+  .card-img-top {
+    width: 100%; /* Establece el ancho al 100% del contenedor */
+    height: 200px; /* Establece la altura fija */
+    object-fit: cover; /* Para mantener la relación de aspecto y cubrir el área */
+    margin-bottom: 100px;
+  }/* Estilos personalizados para el calendario */
+.my-custom-calendar {
+  background-color: #F5F5DC; /* Beige */
+  color: #000000;
+  font-size: 1.2em;
+  border: 4px solid #6e4f16; /* Gris claro */
+  border-radius: 40x;
+  padding: 20px;
+}
+
+
+.my-custom-calendar .mwl-calendar-month-cell:hover {
+  background-color: #ffffff; /* Verde musgo */
+}
+
+.my-custom-calendar .mwl-calendar-month-view {
+  background-color: #FAEBD7; /* Blanco antiguo */
+}
+
+

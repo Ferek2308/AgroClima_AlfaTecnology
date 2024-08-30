@@ -1,0 +1,91 @@
+.login-section {
+    width: 300px;
+    background-color: rgb(237, 255, 229); 
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #191919;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+}
+
+.login-section form {
+    margin-bottom: 20px;
+}
+.logo {
+    text-align: center;
+}  
+.login-section label {
+    display: block;
+    font-family: 'Newsreader', serif;
+    font-size: 18px; /* Cambia el tamaño */
+    font-weight: bold; /* Cambia el peso (normal, bold, etc.) */
+    color: #000000;
+    margin-bottom: 5px;
+}
+.login-section {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.login-section strong {
+    font-family: 'Newsreader', serif;
+    font-size: 24px; /* Cambia el tamaño */
+    font-weight: bold; /* Cambia el peso (normal, bold, etc.) */
+    color: #0d460f;
+}
+.l {
+    font-family: 'Newsreader', serif;
+    font-size: 18px; /* Cambia el tamaño */
+    font-weight: bold; /* Cambia el peso (normal, bold, etc.) */
+    color: #000000;
+}
+/* Cambiar el color del texto "Example" a gris */
+.login-section label span {
+    color: rgb(72, 170, 59);
+}
+.login-section input[type="email"],
+.login-section input[type="password"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.1);
+}
+
+.login-section input[type="submit"] {
+    width: 100%;
+    padding: 5px;
+    background-color: #426B1F;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-section input[type="submit"]:hover {
+    background-color: #426B1F;
+}
+
+.login-section p {
+    text-align: center;
+}
+
+.login-section a {
+    color: #426B1F;
+    text-decoration: none;
+}
+
+.login-section a:hover {
+    text-decoration: underline;
+}
+.logo-container {
+    text-align: center;
+}
+
+.login-form {
+    margin: 0 auto; /* Esto centrará el formulario horizontalmente */
+    width: 300px; /* Ajusta este valor según sea necesario */
+}

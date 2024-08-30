@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title >Datos Climáticos</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+
+    
+    <div class="card rounded shadow py-5 custom-card">
+        <div class="col text-center titulo"><h1><strong>Editar Datos Climáticos</strong></h1></div>
+        <form [formGroup]="forma" (ngSubmit)="guardar()">
+            <div class="container mt-5">
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <label for="estacion" class="form-label p">Localidad:</label>
+                        <select class="form-select form-select-sm float-end" id="estado" formControlName="Estado">
+                            <option class="form-select form-select-sm float-end"value="Calakmul">Calakmul</option>
+                            <option value="Calkiní">Calkiní</option>
+                            <option value="Campeche">Campeche</option>
+                            <option value="Carmen">Carmen</option>
+                            <option value="Candelaria">Candelaria</option>
+                            <option value="Champotón">Champotón</option>
+                            <option value="Dzitbalche">Dzitbalche</option>
+                            <option value="Hecelchakán">Hecelchakán</option>
+                            <option value="Hopelchén">Hopelchén</option>
+                            <option value="Palizada">Palizada</option>
+                            <option value="Seybaplaya">Seybaplaya</option>
+                            <option value="Tenabo">Tenabo</option>
+                            <option value="Escárcega">Escárcega</option>
+                        </select>
+                    </div>
+                   
+                    
+                    
+                </div>
+               
+                    <table>
+                        
+                            <tr>
+                                <th class="ps">Meses</th>
+                                <th class="ps">Temperatura Máxima (°C)</th>
+                                <th class="ps">Temperatura Mínima (°C)</th>
+                                <th class="ps">Precipitación (mm)</th>
+                            </tr>
+                       
+                        
+                            <tr *ngFor="let mes of meses">
+                              <td>{{ mes }}</td>
+                              <td><input type="text" [formControlName]="mes + '_Temp_Max_Promedio'"></td>
+                              <td><input  type="text" [formControlName]="mes + '_Temp_Min_Promedio'"></td>
+                              <td><input type="text" [formControlName]="mes + '_Precipitacion_Promedio'"></td>
+                            </tr>
+                         
+        
+                    </table>
+                
+                
+                   </div>
+                   <div class="col-md-3"> <button class="btn custom-btn-save btn-dark btn-lg btn-block" type="submit"> <i class="bi bi-save">Guardar</i></button></div>
+           
+        </form>
+        
+   
+</div>
+

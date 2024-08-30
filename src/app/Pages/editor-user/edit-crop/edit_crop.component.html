@@ -1,0 +1,181 @@
+<body>
+
+    <div class="container">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-8">
+                <div class="card rounded shadow py-5">
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <input type="file" id="inputImagen" class="d-none" (change)="onFileSelected($event)" accept="image/*" #photoInput>
+                        <div class="text-center fs-2 mb-2">
+                            <strong>  Imagen del Cultivo</strong>
+                        </div>
+                        <div class="text-center">
+                            <img [src]="base64Imagen || 'assets/campo.png'" class="img" alt="No image">
+                        </div>
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-center">
+                                <button class="btn btn-warning mx-2 custom-btn-edit" (click)="photoInput.click()">
+                                    <i class="bi bi-pencil"></i> Editar
+                                </button>
+                                <button class="btn btn-danger mx-2 custom-btn-deleted" (click)="eliminarImagen()">
+                                    
+                                    <i class="bi bi-trash"></i> Eliminar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                   </div>
+                   <div class="card rounded shadow py-5">
+                    <div class="mb-3">
+                        <label for="plagas" class="form-label">Plagas</label>
+                        <select class="form-select" id="plagas" [(ngModel)]="plagaSeleccionada">
+                            <option *ngFor="let plaga of plagas" [value]="plaga.ID_Plaga">{{ plaga.Nombre }}</option>
+                        </select>
+                        <button class="btn btn-primary mt-2 custom-btn-add" (click)="agregarPlaga()"><i class="bi bi-bug"></i>Agregar Plaga</button>
+                    </div>
+                    <label for="plagas" class="form-label">Plagas</label>
+                    <ul class="list-group" id="plagas">
+                        <li class="list-group-item" *ngFor="let plaga of plagasSeleccionadas; let i = index">
+                            {{ plaga }} <!-- Mostrar el nombre de la plaga -->
+                            <button class="btn btn-danger btn-sm ms-2 custom-btn-deleted" (click)="eliminarPlaga(i)">
+                                <i class="bi bi-trash"></i> Eliminar
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                   </div> 
+                    
+                   <div class="row justify-content-center">   
+                   <div class="col-md-10">
+                    <form [formGroup]="forma" (ngSubmit)="guardar()">
+                        <!-- Campos del formulario -->
+                      
+                        <div class="card rounded shadow py-4 row">
+                            <div class="row justify-content-center">   
+                                <div class="text-center fs-2 mb-2">
+                                    <strong>  Seccion de Siembra </strong>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="Nombre" class="col-md-2 col-form-label"> <strong> Nombre:</strong></label>
+                                    <div class="col-md-9">
+                                        <input formControlName="Nombre" type="text" class="form-control mt-1" id="Nombre" placeholder="Nombre del cultivo">
+                                    </div>
+                                </div>
+        
+                                <div class="mb-3">
+                                    <label for="metodo" class="form-label"><strong>Método óptimo de siembra</strong></label>
+                                    <textarea formControlName="Metodo_Optimo_Siembra" class="form-control" id="metodooptimodesiembra" placeholder="Método óptimo de siembra" rows="4"></textarea>
+                                </div>
+        
+                                <div class="mb-3 row">
+                                    <label for="suelo" class="col-md-3 col-form-label"><strong>Tipo de suelo Optimo:</strong></label>
+                                    <div class="col-md-7">
+                                        <input formControlName="Tipo_De_Suelo" type="text" class="form-control mt-1" id="optimosuelo" placeholder="Tipo de suelo optimo">
+                                    </div>
+                                </div>
+    
+                                <div class="mb-3">
+                                    <label for="suelo" class="form-label"><strong>Recomendaciones de Riego</strong></label>
+                                    <textarea formControlName="Recomendaciones_De_Riego" type="text" class="form-control" id="riego" placeholder="Recomendaciones de Riego" rows="3"></textarea>
+                                </div>
+                                
+                                <div class="mb-3  row">
+                                    <label for="temperaturaminima" class="col-md-4 col-form-label"><strong>Temperatura Minima:</strong></label>
+                                    <div class="col-md-7">
+                                    <input formControlName="TemperaturaMinima" type="text" class="form-control mt-1" id="tmin" placeholder="Temperatura Minima">
+                                </div>
+                            </div>
+    
+    
+                                <div class="mb-3  row">
+                                    <label for="temperaturamaxima" class="col-md-4 col-form-label"><strong>Temperatura Maxima:</strong> </label>
+                                    <div class="col-md-7">
+                                        <input formControlName="TemperaturaMaxima" type="text" class="form-control mt-1" id="tmax" placeholder="Temperatura Maxima">
+                                
+                                    </div>
+                                    </div>
+                                <div class="mb-3 row">
+                                    <label for="cantidad" class="col-md-6 col-form-label"><strong>Cantidad por metro cuadrado:</strong> </label>
+                                    <div class="col-md-6">
+                                    <input formControlName="Cantidad_Por_Metro_Cuadrado" type="text" class="form-control" id="tmax" placeholder="Cantidad a sembrar por metro cuadrado">
+                                </div>
+                            </div>
+                            </div>
+        
+                        </div>
+                        <div class="card rounded shadow py-4 row">
+                            <div class="row justify-content-center">   
+                                <div class="text-center fs-2 mb-2">
+                                    <strong>Seccion de Crecimiento y cuidado</strong> 
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="ciclocultivo" class="col-md-3 col-form-label"><strong>Ciclo de Cultivo:</strong></label>
+                                    <div class="col-md-6">
+                                    <input formControlName="CicloCultivo" type="text" class="form-control" id="ciclo" placeholder="Ciclo cultivo en dias">
+                                </div>
+                            </div>
+                                <div class="mb-3 row">
+                                    <label for="temperaturaoptima" class="col-md-3 col-form-label"><strong>Temperatura Optima: </strong></label>
+                                    <div class="col-md-6">
+                                    <input formControlName="TemperaturaOptima" type="text" class="form-control" id="topt" placeholder="Temperatura Optima">
+                                </div>
+                            </div>
+                                <div class="mb-3">
+                                    <label for="cuidado" class="form-label"><strong>Cuidado durante el crecimiento</strong></label>
+                                    <textarea formControlName="Cuidado" type="text" class="form-control" id="maneracosechar" placeholder="Cuidado durante el crecimiento"   rows="3"></textarea>
+    
+                                </div>
+        
+                            </div>
+        
+                        </div>
+                     
+                        <div class="card rounded shadow py-4 row">
+                            <div class="row justify-content-center"> 
+                                <div class="text-center fs-2 mb-2">
+                                   <strong>Seccion de Cosecha</strong> 
+                                </div>
+                                <div class="mb-3">
+                                    <label for="manera" class="form-label"><strong>Manera de Cosechar</strong></label>
+                                    <textarea formControlName="Manera_de_Cosechar" type="text" class="form-control" id="maneracosechar" placeholder="Manera de Cosechar"  rows="3"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="recomendaciones" class="form-label"><strong>Recomendaciones</strong></label>
+                                    <textarea formControlName="Recomendaciones" type="text" class="form-control" id="recomenda" placeholder="Recomendaciones" rows="4"></textarea>
+                                </div>
+                
+                                <div class="mb-3 row">
+                                    <label for="precio" class="col-md-3 col-form-label"><strong>Precio en el mercado:</strong></label>
+                                    <div class="col-md-6">
+                                        <input formControlName="Precio_En_El_Mercado" type="text" class="form-control" id="recomenda" placeholder="Precio en el mercado">
+                           
+                                    </div>
+                                      </div>                
+                                <div class="mb-3">
+                                   
+                                    <label for="manpcose" class="form-label"><strong>Manejo Post Cosecha</strong></label>
+                                    <textarea formControlName="Manejo_Post_Cosecha" type="text" class="form-control" id="recomenda" placeholder="Manejo despues de la cosecha" rows="3"></textarea>
+                                </div>
+                   
+                            </div>
+                              <div class="mb-3">
+                                <button class="btn btn-custom btn-lg btn-block custom-btn-save" type="submit">  <i class="bi bi-save"></i> Guardar</button>
+                              
+                              </div>
+                              </div>  
+                    </form>             
+                </div>     
+            </div>
+      
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-6">
+                    <div *ngIf="mensaje" class="alert alert-dismissible fade show" [ngClass]="{'alert-success': mensaje.success, 'alert-danger': !mensaje.success}" role="alert">
+                        {{ mensaje.texto }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="limpiarMensaje()"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

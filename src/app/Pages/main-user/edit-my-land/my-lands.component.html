@@ -1,0 +1,58 @@
+<div class="container">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
+    <div class="row justify-content-center mt-8">
+      <h1 class="text-center my-4 titulo">Editar Terreno</h1>
+      </div>
+      <div class="row">
+        
+        <div class="col-md-6">
+          <!-- Green field background -->
+          <div class="green-field">
+            <img src="assets/terreno.png" alt="Descripción de la imagen" style="max-width: 100%; height: auto;">
+          </div>
+        </div>
+  
+        <div class="col-md-6">
+          <div class="card rounded shadow py-5">
+            <form [formGroup]="forma" (ngSubmit)="guardar()">
+              <div class="row justify-content-center">
+                <div class="col-md-10">
+                  <label for="terreno-size"><strong>Nombre del Terreno</strong></label>
+                  <input formControlName="Nombre" type="text" id="terreno-size" class="form-control" placeholder="Nombre del Terreno">
+                
+                </div>
+                  
+                <div class="col-md-10">
+                  <label for="terreno-size"><strong>Ubicacion del Terreno</strong></label>
+                  <input formControlName="Ubicacion" type="text" id="terreno-size" class="form-control" placeholder="Ubicacion del Terreno">
+                </div>
+              </div>
+
+              <div class="row row justify-content-center">
+                <div class="col-md-5">
+                  <label for="suelo-type"><strong>Ancho</strong></label>
+                  <input formControlName="Ancho" type="text" id="suelo-type" class="form-control" placeholder="Ancho en metros">
+                </div>
+                <div class="col-md-5">
+                  <label for="suelo-type"><strong>Largo</strong></label>
+                  <input formControlName="Largo" type="text" id="suelo-type" class="form-control" placeholder="Largo en metros">
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-md-8">
+                  <button class="btn btn-primary custom-btn-edit" id="editar-btn ">  <i class="bi bi-pen">Editar</i></button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="row justify-content-center mt-4">
+            <div class="col-md-6">
+                <div *ngIf="mensaje" class="alert alert-dismissible fade show" [ngClass]="{'alert-success': mensaje.success, 'alert-danger': !mensaje.success}" role="alert">
+                    {{ mensaje.texto }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="limpiarMensaje()"></button>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    

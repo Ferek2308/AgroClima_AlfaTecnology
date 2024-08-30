@@ -1,0 +1,69 @@
+<body>
+    <div class="container">
+        <div class="row">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
+            <div class="col-md-12 mt-5">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <h3 class="text-theme-center titulo">Historial de Cambios en Plagas</h3>
+                        <p class="p">Lista de cambios en Plagas</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="input-group mb-6 mt-4"> 
+            <button class="btn btn-outline-primary" type="button" id="button-addon2" (click)="toggleFiltroMenu()">
+                <i class="bi bi-filter"></i> Filtrar
+            </button>
+            <input type="text" [(ngModel)]="filtro" class="form-control" placeholder="Buscar...">
+            <ul class="dropdown-menu dropdown-menu-end" [ngClass]="{ 'show': filtroMenuVisible }" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" (click)="selectedFiltro = 'Usuario'; cerrarFiltroMenu()"><i class="bi bi-person"></i> Usuario</a></li>
+                <li><a class="dropdown-item" (click)="selectedFiltro = 'Accion'; cerrarFiltroMenu()"><i class="bi bi-gear"></i> Acción</a></li>
+                <li><a class="dropdown-item" (click)="selectedFiltro = 'Plaga'; cerrarFiltroMenu()"><i class="bi bi-bug"></i> Cultivo</a></li>
+                <li><a class="dropdown-item" (click)="selectedFiltro = 'Fecha'; cerrarFiltroMenu()"><i class="bi bi-calendar"></i> Fecha</a></li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-12 mt-1">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="ps"> No. </th>
+                                    <th class="ps"> Usuario </th>
+                                    <th class="ps"> Accion </th>
+                                    <th class="ps"> Plaga Modificado</th>
+                                    <th class="ps"> Cambios Realizados </th>
+                                    <th class="ps"> Fecha </th>
+                                    <th class="ps"> Hora </th>
+                                </tr>
+                            </thead>
+    
+                            <tbody>
+                                <tr *ngFor="let plaga of filtrarHistorial()">
+                                    <td class="col-2 data"> {{ plaga.ID }} </td>
+                                    <td class="col-2 data">{{ plaga.Usuario }}</td>
+                                    <td class="col-2 data">{{ plaga.Accion }}</td>
+                                    <td class="col-2 data">{{ plaga.Plaga_Modificada }}</td>
+                                    <td class="col-2 data">{{ plaga.Cambios_Realizados }}</td>
+                                    <td class="col-2 data">{{ plaga.Fecha }}</td>
+                                    <td class="col-2 data">{{ plaga.Hora }}</td>
+            
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="text-center" *ngIf="filtrarHistorial().length === 0">
+                            <div style="font-size: 4rem;">
+                                <i class="bi bi-emoji-frown" style="font-size: 7rem;"></i> <!-- Icono triste -->
+                                <p><strong>No se encontraron resultados.</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>

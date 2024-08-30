@@ -1,0 +1,30 @@
+.titulo {
+    font-family: 'Roboto', sans-serif; /* Fuente legible y moderna */
+    font-size: 30px; /* Tamaño grande para destacar */
+    font-weight: bold; /* Negrita para énfasis */
+    color: #0d460f; /* Verde asociado con la naturaleza y la agricultura */
+    text-transform: uppercase; /* Mayúsculas para un aspecto más formal */
+    text-align: center; /* Centrado para un diseño equilibrado */
+    margin-bottom: 20px; /* Margen inferior para separación de elementos */
+  }
+  body {
+    background-color: #ffffff; /* Código de color en formato hexadecimal */
+    margin: 20px;
+  }
+  .p {
+    font-family: 'Newsreader', serif;
+    font-weight: bold;
+    font-size: 1.6em; 
+    color: #000000; /* Cambia el color del texto */
+    }
+    .ps {
+      font-family: 'Lora', serif; 
+      font-weight: bold;
+      font-size: 1.2em; 
+      color: #00452b; /* Cambia el color del texto */
+    }
+    .data {
+    
+      font-size: 1em; 
+      color: #000000; /* Cambia el color del texto */
+    }

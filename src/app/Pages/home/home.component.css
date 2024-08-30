@@ -1,0 +1,78 @@
+/* Reset default margin and padding */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container-fluid {
+    width: 100%;
+    max-width: 100%;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+#hero {
+    background-image: url('../../../assets/campo.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+    text-align: center;
+    color: #ffffff;
+    flex: 1 1 100%;
+}
+
+#hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 90%;
+}
+
+.button {
+    font-size: 16px; /* Tamaño del texto */
+    padding: 10px 20px; /* Tamaño del botón */
+    font-weight: bold; /* Negritas */
+    /* Puedes agregar más estilos si es necesario */
+    background-color: #046b3d; /* Color de fondo del botón */
+    color: #fff; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Para comportarse como un botón */
+    text-align: center; /* Centrar el texto */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+    main {
+        padding: 2rem;
+    }
+
+    #hero {
+        padding: 6rem;
+    }
+
+    #hero h1 {
+        font-size: 6rem;
+    }
+}

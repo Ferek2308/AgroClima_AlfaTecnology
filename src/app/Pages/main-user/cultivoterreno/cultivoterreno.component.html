@@ -1,0 +1,17 @@
+<div class="login-section">
+    <label for="fecha" style="text-align: center;"><strong>Agregar Cultivo</strong></label><br>
+    <form [formGroup]="forma" (ngSubmit)="agregar()">
+        <label for="fecha">Fecha de Cultivo:</label><br>
+        <input type="date" id="fec" formControlName="fecha" required><br>
+        
+        <!-- Menú desplegable para seleccionar el terreno -->
+        <label for="terreno">Seleccionar Terreno:</label><br>
+        <select id="terreno" formControlName="terreno" required>
+            <option value="" disabled selected>Seleccione un terreno</option>
+            <!-- Itera sobre la lista de terrenos disponibles -->
+            <option *ngFor="let terreno of terrenos" [value]="terreno.ID_Terreno">{{ terreno.Nombre }}</option>
+        </select><br>
+        
+        <button type="submit">Agregar</button>
+    </form>
+</div>

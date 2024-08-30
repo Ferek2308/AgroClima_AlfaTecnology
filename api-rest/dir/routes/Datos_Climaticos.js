@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const Datos_Climaticos_1 = require("../controllers/Datos_Climaticos");
+const router = (0, express_1.Router)();
+router.get('/', Datos_Climaticos_1.getDatosClimaticos);
+router.get('/:id', Datos_Climaticos_1.getDatosClimaticosPorId);
+router.get('/i/:estado', Datos_Climaticos_1.getDatosClimaticosPorEstado);
+router.delete('/:id', Datos_Climaticos_1.deleteDatosClimaticos);
+router.post('/', Datos_Climaticos_1.createDatosClimaticos);
+router.put('/:id', Datos_Climaticos_1.updateDatosClimaticos);
+exports.default = router;

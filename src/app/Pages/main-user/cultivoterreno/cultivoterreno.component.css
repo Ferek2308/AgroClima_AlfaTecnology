@@ -1,0 +1,81 @@
+.login-section {
+    text-align: center; /* Para centrar el contenido del div */
+    width: 300px;
+    background-color: rgb(221, 218, 218); 
+    margin: 0 auto;
+    padding: 20px;
+    border: 4px solid #000000;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+}
+.login-section button[type="submit"] {
+    background-color: #426B1F; /* Cambia el color del botón a verde */
+    color: #fff; /* Cambia el color del texto a blanco */
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem; /* Ajusta el relleno del botón según sea necesario */
+    cursor: pointer;
+    margin-top: 1rem; /* Agrega un espacio superior para separar el botón */
+}
+.login-section form {
+    margin-bottom: 20px;
+}
+
+.login-section label {
+    display: block;
+
+    margin-bottom: 5px;
+}
+.login-section {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.login-section strong {
+    font-family: 'Newsreader', serif;
+    font-size: 24px; /* Cambia el tamaño */
+    font-weight: bold; /* Cambia el peso (normal, bold, etc.) */
+    /* Y más estilos según lo que necesites */
+}
+/* Cambiar el color del texto "Example" a gris */
+.login-section label span {
+    color: grey;
+}
+.login-section input[type="email"],
+.login-section input[type="password"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.1);
+}
+
+.login-section input[type="submit"] {
+    width: 100%;
+    padding: 5px;
+    background-color: #426B1F;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-section input[type="submit"]:hover {
+    background-color: #426B1F;
+}
+
+.login-section p {
+    text-align: center;
+}
+
+.login-section a {
+    color: #426B1F;
+    text-decoration: none;
+}
+
+.login-section a:hover {
+    text-decoration: underline;
+}

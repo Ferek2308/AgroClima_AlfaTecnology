@@ -1,0 +1,140 @@
+
+
+/* Estilo para el cuerpo del documento */
+body {
+  background: #426B1F;
+  /* Establece el color de fondo */
+  min-height: 50vh;
+  /* Establece la altura mínima del cuerpo al 100% del viewport */
+}
+/* Estilos para los elementos de párrafo */
+p {
+  font-size: 40px;
+
+  /* Establece el tamaño de fuente para los párrafos */
+}
+
+
+/* Estilos para las etiquetas de formulario */
+label {
+  font-size: 16px;
+  font-weight: bold;
+  /* Establece el tamaño de fuente para las etiquetas */
+}
+
+/* Estilos para los campos de entrada */
+input,
+select {
+  border: none;
+  /* Elimina los bordes de los campos de entrada */
+  box-shadow: none;
+  /* Elimina la sombra del campo de entrada */
+  width: 100%;
+  /* Establece el ancho al 100% */
+  padding: 0px 2px;
+  /* Agrega relleno a los campos de entrada */
+  font-family: 'Poppins', sans-serif;
+  /* Establece la fuente */
+}
+
+/* Estilos para los campos de entrada enfocados */
+.form-control:focus {
+  border-color: transparent;
+  /* Establece el color del borde en enfocado */
+  box-shadow: none;
+  /* Elimina la sombra en enfocado */
+}
+.container {
+  width: 50%; /* Reducir el ancho del contenedor */
+}
+
+/* Estilos para el contenedor de campos de entrada */
+.input-field {
+  border-radius: 5px;
+  /* Establece el radio de borde */
+  padding: 5px;
+  /* Agrega relleno */
+  display: flex;
+  /* Establece el contenedor como flex */
+  align-items: center;
+  /* Centra los elementos verticalmente */
+  cursor: pointer;
+  /* Establece el cursor */
+  border: 2px solid #426B1F;
+  /* Establece el borde */
+  color: #28470d;
+  /* Establece el color de texto */
+}
+
+/* Estilos para el contenedor de campos de entrada al pasar el mouse */
+.input-field:hover {
+  color: #426B1F;
+  /* Cambia el color del texto al pasar el mouse */
+  border: 2px solid #426B1F;
+  /* Cambia el borde al pasar el mouse */
+}
+
+/* Estilos para el contenedor de alerta */
+.alert {
+  position: fixed;
+  /* Establece la posición fija */
+  max-width: 510px;
+  /* Establece el ancho máximo */
+  top: 0px;
+  /* Establece la posición superior */
+  left: 50%;
+  /* Establece la posición izquierda al 50% */
+  transform: translateX(-50%);
+  /* Centra horizontalmente */
+  z-index: 10;
+  /* Establece el índice z para superponer */
+}
+
+/* Estilos para el botón dentro del contenedor de entrada */
+.input-field button {
+  border: none;
+  /* Elimina los bordes del botón */
+  background: none;
+  /* Establece el fondo transparente */
+  cursor: pointer;
+  /* Establece el cursor */
+}
+
+/* Estilos para el marcador de posición */
+::placeholder {
+  font-size: 15px;
+  /* Establece el tamaño de fuente del marcador de posición */
+}
+
+/* Estilos para los botones */
+button {
+  margin: 0 4px;
+  /* Establece el margen */
+  border: none;
+  /* Elimina los bordes de los botones */
+}
+
+/* Estilos para el elemento con id alert */
+#alert {
+  font-size: 20px;
+  /* Establece el tamaño de fuente */
+}
+
+/* Estilos para el botón personalizado */
+.btn-custom {
+  background-color: #426B1F;
+  /* Establece el color de fondo */
+  background: #426B1F;
+  /* Establece el color de fondo */
+  color: #ffffff;
+  /* Establece el color del texto */
+}
+
+/* Estilos para el elemento con clase logotext */
+.logotext {
+
+  height: 76px;
+  /* Establece la altura */
+  width: 76px;
+  /* Establece el ancho */
+}

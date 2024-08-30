@@ -1,0 +1,54 @@
+<body>
+  <div class="container">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
+    <h1 class="text-center titulo">MIS CULTIVOS</h1>
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-6" *ngFor="let cultivo of cultivos; let i = index">
+        <div class="card custom-card mb-4">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img [src]="cultivo.Imagen ?? 'assets/terreno.png'" alt="{{ cultivo.Nombre }} " class="img-fluid w-150 h-100">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title p">{{ cultivo.Nombre }}</h5>
+                <p><strong>Dias estimados para cosehar:</strong>  {{ cultivo.CicloCultivo }} Dias</p>
+                <p><strong>Fecha de inicio: </strong>{{ terrenCulti[i].Fecha_Inicio | date }}</p>
+                <p><strong>Fecha de Cosecha: </strong>{{ terrenCulti[i].Fecha_Cosecha| date }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="text-center">
+            <h1 class="text-center ps">Calendario</h1>
+          <h3>{{ viewDate | date: 'MMMM y' }}</h3>
+        </div>
+    
+        <!-- Calendario -->
+        <div class="calendar-container my-custom-calendar">
+          <mwl-calendar-month-view
+            [viewDate]="viewDate"
+            [events]="events"
+            (eventClicked)="handleEventClicked($event.event)"
+          ></mwl-calendar-month-view>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between mt-2 ">
+        <button class="btn custom" (click)="previousMonth()">
+          <i class="bi bi-arrow-left"></i>
+        </button>
+        <button class="btn custom " (click)="nextMonth()">
+          <i class="bi bi-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+    
+  </div>
+</body>
+

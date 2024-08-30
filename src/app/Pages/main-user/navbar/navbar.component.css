@@ -1,0 +1,51 @@
+nav {
+  background: #2f5111;
+}
+nav a {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 1.2em; 
+}
+
+.opciones {
+
+padding-right: 4.5rem;
+padding-top: 5px;
+padding-left: 10px;
+}
+
+li {
+  margin-right: 15px;
+}
+
+.img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #000000;   
+  
+
+}
+
+
+.form-group {
+margin-bottom: 15px; /* Ajusta el margen inferior según tus necesidades */
+}
+
+
+
+.form-control {
+width: 100%;
+padding: 10px;
+font-size: 16px;
+border: 1px solid #ccc;
+border-radius: 5px;
+margin-top: 5px;
+}
+
+/* Estilo adicional para resaltar el campo activo */
+.form-control:focus {
+outline: none;
+border-color: #3273dc;
+box-shadow: 0 0 5px rgba(50, 115, 220, 0.5);
+}

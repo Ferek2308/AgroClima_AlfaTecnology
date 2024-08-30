@@ -1,0 +1,184 @@
+<div class="container">
+    <div class="row justify-content-center mt-4">
+        <h1>{{ cultivo?.Nombre }}</h1>
+    </div>
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-5">
+            <div class="card rounded shadow py-5">
+                <div class="row d-flex align-items-center justify-content-center">
+                    <div class="text-center fs-2 mb-2">
+                        <strong> Imagen del Cultivo</strong>
+                       
+                    </div>
+                    <div class="text-center">
+                        <img [src]="base64Imagen || 'assets/campo.png'" class="img" alt="No image">
+                    </div>
+                    <div class="mt-3">
+                        <div class="d-flex justify-content-center">
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card rounded shadow py-5">
+                <div class="mb-3">               
+                    <label for="plagasSeleccionadas" class="text-center fs-2 mb-2"><strong>Lista de Plagas</strong></label>
+                    <ul class="list-group" id="plagasSeleccionadas">
+                        <li class="list-group-item" *ngFor="let plaga of plagasSeleccionadas; let i = index">
+                            <strong>{{ plaga }}</strong>
+                            <button type="button" class="btn btn-primary" (click)="mostrarInformacionPlaga(plaga)">Información</button>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+        <div class="card rounded shadow py-5">
+            <div class="mb-3">
+                <div class="text-center fs-2 mb-2">
+                    <strong>  Datos Climaticos </strong>
+                </div>
+                 <div class="row justify-content-center"> 
+                    <div class="col-md-12" *ngFor="let climaI of clima">
+                       
+                        <label for="Nombre" class="col-md-8 col-form-label"> <strong> Mes Optimo para la siembra:</strong></label>
+                        
+                            <label>{{ climaI.Mes_Optimo_Siembra}}</label>
+                  
+                  
+                        <label for="Nombre" class="col-md-8 col-form-label"> <strong> Mes esperado para Cosechar:</strong></label>
+                       
+                        <label>{{ climaI.Mes_Cosecha}}</label>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        </div>
+    
+        <div class="col-md-6">
+            <div class="card rounded shadow py-4 row">
+                <div class="row justify-content-center">   
+                    <div class="text-center fs-2 mb-2">
+                        <strong>  Seccion de Siembra </strong>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="Nombre" class="col-md-3 col-form-label"> <strong> Nombre:</strong></label>
+                        <div class="col-md-5">
+                            <label>{{ cultivo?.Nombre }}</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="metodo" class=" form-label"><strong>Método óptimo de siembra:</strong></label>
+                        <div class="col-md-12">
+                            <label>{{ cultivo?.Metodo_Optimo_Siembra }}</label>
+                        </div>
+                     
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="suelo" class="col-form-label"><strong>Tipo de suelo Optimo:</strong></label>
+                        <div class="col-md-12">
+                            <label>{{ cultivo?.Tipo_De_Suelo }}</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="suelo" class="form-label"><strong>Recomendaciones de Riego:</strong></label>
+                         <div class="col-md-12">
+                            <label>{{ cultivo?.Recomendaciones_De_Riego }}</label>
+                         </div>
+                       
+                    </div>
+                    
+                    <div class="mb-3  row">
+                        <label for="temperaturaminima" class="col-md-5 col-form-label"><strong>Temperatura Minima:</strong></label>
+                        <div class="col-md-2">
+                            <label>{{ cultivo?.TemperaturaMinima}} C°</label>
+                    </div>
+                </div>
+
+
+                    <div class="mb-2  row">
+                        <label for="temperaturamaxima" class="col-md-5 col-form-label"><strong>Temperatura Maxima:</strong> </label>
+                        <div class="col-md-2">
+                            <label>{{ cultivo?.TemperaturaMaxima}} C°</label>
+                    
+                        </div>
+                        </div>
+                    <div class="mb-3 row">
+                        <label for="cantidad" class="col-md-6 col-form-label"><strong>Cantidad por metro cuadrado:</strong> </label>
+                        <div class="col-md-2">
+                            <label>{{ cultivo?.Cantidad_Por_Metro_Cuadrado}}</label>
+                    </div>
+
+        </div>
+       
+    </div>
+    
+</div>
+<div class="card rounded shadow py-4 row">
+    <div class="row justify-content-center">   
+        <div class="text-center fs-2 mb-2">
+            <strong>Seccion de Crecimiento y cuidado</strong> 
+        </div>
+        <div class="mb-3 row">
+            <label for="ciclocultivo" class="col-md-5 col-form-label"><strong>Ciclo de Cultivo:</strong></label>
+            <div class="col-md-2">
+                <label>{{ cultivo?.CicloCultivo}} dias</label>
+        </div>
+    </div>
+                <div class="mb-3 row">
+                    <label for="temperaturaoptima" class="col-md-5 col-form-label"><strong>Temperatura Optima: </strong></label>
+                    <div class="col-md-2">
+                        <label>{{ cultivo?.TemperaturaOptima}} C°</label>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="cuidado" class="form-label"><strong>Cuidado durante el crecimiento</strong></label>
+                    <div class="col-md-12">
+                    <label>{{ cultivo?.Cuidado}}</label>
+                </div>
+                </div>
+
+             </div>
+
+            </div>
+            <div class="card rounded shadow py-4 row">
+                <div class="row justify-content-center"> 
+                    <div class="text-center fs-2 mb-2">
+                       <strong>Seccion de Cosecha</strong> 
+                    </div>
+                    <div class="mb-3 row">
+                       
+                        <label for="manera" class="form-label"><strong>Manera de Cosechar</strong></label>
+                        <div class="col-md-12">
+                        <label>{{ cultivo?.Manera_de_Cosechar}}</label>
+                    </div>
+                    </div>
+                    <div class="mb-3 row">
+                        
+                        <label for="recomendaciones" class="form-label"><strong>Recomendaciones</strong></label>
+                        <div class="col-md-12">
+                        <label>{{ cultivo?.Recomendaciones}}</label>
+                    </div>
+                </div>
+                    <div class="mb-3 row">
+                        <label for="precio" class="col-md-5 form-label"><strong>Precio en el mercado:</strong></label>
+                        <div class="col-md-1">
+                            <label>${{ cultivo?.Precio_En_El_Mercado}}</label>
+                        </div>
+                          </div>                
+                    <div class="mb-3 row">
+                      
+                        <label for="manpcose" class="form-label"><strong>Manejo Post Cosecha</strong></label>
+                        <div class="col-md-12">
+                        <label>{{ cultivo?.Manejo_Post_Cosecha}}</label>
+                    </div>
+                    </div>
+       
+                </div>
+                  </div>  
+        </div>
+        
+    </div>
+</div>
